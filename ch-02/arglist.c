@@ -1,0 +1,20 @@
+/* Listing 2.1 (arglist.c) Using argc and argv */
+
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+	printf("The name of the program is '%s'.\n", argv[0]);
+	printf("This program was invoked with %d argumets.\n", argc - 1);
+
+	/* Were any command-line arguments specified? */
+	if (argc > 1) {
+		/* Yes, print them. */
+		int i;
+		printf("The argumets are:\n");
+		for (i = 1; i < argc; ++i) {
+			printf("\t%s\n", argv[i]);
+		}
+	}
+
+	return 0;
+}
